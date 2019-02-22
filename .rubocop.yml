@@ -1,0 +1,22 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  Exclude:
+    - spec/**/*
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/EndOfLine:
+  EnforcedStyle: lf
+
+Style/RaiseArgs:
+  EnforcedStyle: compact
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
