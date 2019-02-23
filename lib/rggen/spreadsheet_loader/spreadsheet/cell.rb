@@ -2,8 +2,8 @@ module RgGen
   module SpreadsheetLoader
     module Spreadsheet
       class Cell < Core::InputBase::InputValue
-        def initialize(file, sheet, row, column)
-          position = Position.new(file, sheet, row, column)
+        def initialize(row, column)
+          position = Position.new(row.file, row.sheet, row.row, column)
           super(nil, position)
         end
 

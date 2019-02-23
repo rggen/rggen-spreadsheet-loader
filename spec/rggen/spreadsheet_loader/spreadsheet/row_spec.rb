@@ -2,16 +2,20 @@ require 'spec_helper'
 
 module RgGen::SpreadsheetLoader::Spreadsheet
   describe Row do
-    let(:row) { Row.new(file, sheet, row_index) }
+    let(:row) { Row.new(sheet, row_index) }
 
     let(:file) { 'foo.xlsx' }
 
-    let(:sheet) { 'a sheet' }
+    let(:sheet_name) { 'a sheet' }
+
+    let(:sheet) do
+      double('sheet', file: file, sheet: sheet_name)
+    end
 
     let(:row_index) { (0..10).to_a.sample }
 
     def cell_position(column_index)
-      Position.new(file, sheet, row_index, column_index)
+      Position.new(file, sheet_name, row_index, column_index)
     end
 
     describe '#[]=' do

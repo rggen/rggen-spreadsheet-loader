@@ -2,22 +2,24 @@ module RgGen
   module SpreadsheetLoader
     module Spreadsheet
       class Row
-        def initialize(file, sheet, row_index)
-          @file = file
-          @sheet = sheet
-          @row_index = row_index
+        def initialize(sheet, row)
+          @file = sheet.file
+          @sheet = sheet.sheet
+          @row = row
           @cells = []
         end
 
-        def [](column_index)
-          @cells[column_index] ||= Cell.new(
-            @file, @sheet, @row_index, column_index
-          )
-          @cells[column_index]
+        attr_reader :file
+        attr_reader :sheet
+        attr_reader :row
+
+        def [](column)
+          @cells[column] ||= Cell.new(self, column)
+          @cells[column]
         end
 
-        def []=(column_index, value)
-          self[column_index].value = value
+        def []=(column, value)
+          self[column].value = value
         end
 
         def cells(from = 0, length = nil)
