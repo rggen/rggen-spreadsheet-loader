@@ -2,6 +2,7 @@ if ENV['COVERAGE']
   require 'simplecov'
   SimpleCov.start do
     add_filter 'lib/rggen/core/spec_helpers'
+    add_filter 'spec/support/custom_matchers/'
   end
 
   if ENV['CODECOV_TOKEN']
@@ -11,8 +12,10 @@ if ENV['COVERAGE']
 end
 
 require 'bundler/setup'
+require 'rggen/core'
 require 'rggen/spreadsheet_loader'
 require 'rggen/core/spec_helpers'
+require 'support/custom_matchers'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
