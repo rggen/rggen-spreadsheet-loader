@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email = ['taichi730@gmail.com']
 
   spec.summary = "rggen-spreadsheet-loader-#{RgGen::SpreadsheetLoader::VERSION}"
-  spec.description = 'Spreadsheet loader for RgGen regiter map.'
+  spec.description = 'Spreadsheet loader for RgGen register map.'
   spec.homepage = 'https://github.com/rggen/rggen-spreadsheet-loader'
   spec.license = 'MIT'
 
