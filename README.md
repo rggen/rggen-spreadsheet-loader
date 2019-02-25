@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/rggen/rggen-spreadsheet-loader.svg?branch=master)](https://travis-ci.org/rggen/rggen-spreadsheet-loader)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7a4090f4a7c21d29036c/maintainability)](https://codeclimate.com/github/rggen/rggen-spreadsheet-loader/maintainability)
+[![codecov](https://codecov.io/gh/rggen/rggen-spreadsheet-loader/branch/master/graph/badge.svg)](https://codecov.io/gh/rggen/rggen-spreadsheet-loader)
+
 # Rggen::Spreadsheet::Loader
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rggen/spreadsheet/loader`. To experiment with that code, run `bin/console` for an interactive prompt.
