@@ -14,15 +14,15 @@ module RgGen
       private
 
       def process_sheet(sheet)
-        register_block = parse_register_block(sheet, input_data)
+        register_block = parse_register_block(sheet)
         sheet
           .rows(register_start_position.row)
           .reject { |row| row.cells.all?(&:empty_cell?) }
           .each { |row| process_row(row, register_block) }
       end
 
-      def parse_register_block(sheet, input_block)
-        input_block.register_block do
+      def parse_register_block(sheet)
+        register_map.register_block do
           register_block_valid_values
             .zip(register_block_cells(sheet))
             .each { |value_name, cell| value(value_name, cell) }
