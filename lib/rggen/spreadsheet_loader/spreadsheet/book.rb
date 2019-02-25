@@ -5,6 +5,7 @@ module RgGen
         def initialize(file)
           @file = file
           @sheets = []
+          block_given? && yield(self)
         end
 
         attr_reader :file
