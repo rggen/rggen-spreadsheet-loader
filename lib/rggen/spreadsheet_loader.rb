@@ -1,8 +1,11 @@
+require 'roo'
+require 'roo-xls'
 require_relative 'spreadsheet_loader/version'
-
 require_relative 'spreadsheet_loader/spreadsheet/position'
 require_relative 'spreadsheet_loader/spreadsheet/cell'
 require_relative 'spreadsheet_loader/spreadsheet/row'
 require_relative 'spreadsheet_loader/spreadsheet/sheet'
 require_relative 'spreadsheet_loader/spreadsheet/book'
 require_relative 'spreadsheet_loader/spreadsheet_loader'
+require_relative 'spreadsheet_loader/roo_table_formatter'
+require_relative 'spreadsheet_loader/roo_loader'

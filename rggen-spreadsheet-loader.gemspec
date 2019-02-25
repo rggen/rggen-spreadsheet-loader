@@ -19,5 +19,8 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.3'
 
+  spec.add_runtime_dependency 'roo', '>= 2.8'
+  spec.add_runtime_dependency 'roo-xls', '>= 1.2'
+
   spec.add_development_dependency 'bundler'
 end
