@@ -13,6 +13,11 @@ end
 
 require 'bundler/setup'
 require 'rggen/core'
+
+builder = RgGen::Core::Builder::Builder.new
+builder.register_input_components
+RgGen.builder(builder)
+
 require 'rggen/spreadsheet_loader'
 require 'rggen/core/spec_helpers'
 require 'support/custom_matchers'
