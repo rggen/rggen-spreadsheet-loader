@@ -14,8 +14,7 @@ end
 require 'bundler/setup'
 require 'rggen/core'
 
-builder = RgGen::Core::Builder::Builder.new
-builder.register_input_components
+builder = RgGen::Core::Builder.create
 RgGen.builder(builder)
 
 require 'rggen/spreadsheet_loader'
