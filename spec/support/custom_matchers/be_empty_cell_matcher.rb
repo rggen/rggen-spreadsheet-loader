@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec::Matchers.define(:be_empty_cell) do |position = nil|
   match do |actual|
     return false unless actual.empty_cell?

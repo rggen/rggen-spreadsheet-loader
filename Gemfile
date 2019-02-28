@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 # Specify your gem's dependencies in rggen-spreadsheet-loader.gemspec
@@ -9,6 +11,17 @@ gemspec
     gem rggen_library, path: library_path
   else
     gem rggen_library, git: "https://github.com/rggen/#{rggen_library}.git"
+  end
+end
+
+if !ENV['USE_ORIGINAL_DEPENDENCIES']
+  ['spreadsheet', 'rubyzip', 'ruby-ole'].each do |library|
+    library_path = File.expand_path("../#{library}", __dir__)
+    if Dir.exist?(library_path) && !ENV['USE_GITHUB_REPOSITORY']
+      gem library, path: library_path
+    else
+      gem library, git: "https://github.com/taichi-ishitani/#{library}.git"
+    end
   end
 end
 
