@@ -14,8 +14,8 @@ gemspec
   end
 end
 
-if !ENV['USE_ORIGINAL_DEPENDENCIES']
-  ['spreadsheet', 'rubyzip', 'ruby-ole'].each do |library|
+if ENV['USE_FIXED_GEMS']
+  ['facets', 'ruby-ole', 'rubyzip'].each do |library|
     library_path = File.expand_path("../#{library}", __dir__)
     if Dir.exist?(library_path) && !ENV['USE_GITHUB_REPOSITORY']
       gem library, path: library_path
@@ -23,6 +23,8 @@ if !ENV['USE_ORIGINAL_DEPENDENCIES']
       gem library, git: "https://github.com/taichi-ishitani/#{library}.git"
     end
   end
+
+  gem 'spreadsheet', '>= 1.2.1'
 end
 
 group :develop do
