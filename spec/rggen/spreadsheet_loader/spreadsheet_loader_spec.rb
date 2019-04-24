@@ -30,7 +30,7 @@ module RgGen::SpreadsheetLoader
     end
 
     let(:input_data) do
-      RgGen::Core::RegisterMap::InputData.new(:register_map, valid_value_lists)
+      RgGen::Core::RegisterMap::RegisterMapData.new(valid_value_lists)
     end
 
     describe '入力ファイルの読み込み' do
