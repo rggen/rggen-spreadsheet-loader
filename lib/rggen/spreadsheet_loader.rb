@@ -16,10 +16,6 @@ module RgGen
     def self.setup(builder)
       builder.register_loader(:register_map, RooLoader)
     end
-
-    def self.version
-      VERSION
-    end
   end
 
   setup :'spreadsheet-loader', SpreadsheetLoader
