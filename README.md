@@ -33,6 +33,7 @@ Feedbacks, bug reports, questions and etc. are wellcome! You can post them by us
 
 * [GitHub Issue Tracker](https://github.com/rggen/rggen-spreadsheet-loader/issues)
 * [Mail](mailto:taichi730@gmail.com)
+
 ## Copyright & License
 
 Copyright &copy; 2019 Taichi Ishitani. RgGen::SpreadsheetLoader is licensed under the [MIT License](https://opensource.org/licenses/MIT), see [LICENSE](LICENSE) for futher details.
