@@ -3,46 +3,40 @@
 [![codecov](https://codecov.io/gh/rggen/rggen-spreadsheet-loader/branch/master/graph/badge.svg)](https://codecov.io/gh/rggen/rggen-spreadsheet-loader)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=rggen_rggen-spreadsheet-loader&metric=alert_status)](https://sonarcloud.io/dashboard?id=rggen_rggen-spreadsheet-loader)
 
-# Rggen::Spreadsheet::Loader
+# RgGen::SpreadsheetLoader
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rggen/spreadsheet/loader`. To experiment with that code, run `bin/console` for an interactive prompt.
+RgGen::SpreadsheetLoader adds ability to load register map documents written in spreadsheet format.
 
-TODO: Delete this and the text above, and describe your gem
+Supported spreadsheet formats are listed below:
+
+* MS Excel (xlsx and xls)
+* LibreOffice/OpenOffice (ods)
+* CSV
 
 ## Installation
 
-Add this line to your application's Gemfile:
+During RgGen installation, RgGen::SpreadsheetLoader will also be isntalled automatically.
 
-```ruby
-gem 'rggen-spreadsheet-loader'
+```
+$ gem install rggen
 ```
 
-And then execute:
+If you want to install RgGen::SpreadsheetLoader only, use the command below:
 
-    $ bundle
+```
+$ gem install rggen-spreadsheet-loader
+```
 
-Or install it yourself as:
+## Contact
 
-    $ gem install rggen-spreadsheet-loader
+Feedbacks, bug reports, questions and etc. are wellcome! You can post them by using following ways:
 
-## Usage
+* [GitHub Issue Tracker](https://github.com/rggen/rggen-spreadsheet-loader/issues)
+* [Mail](mailto:taichi730@gmail.com)
+## Copyright & License
 
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rggen-spreadsheet-loader. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+Copyright &copy; 2019 Taichi Ishitani. RgGen::SpreadsheetLoader is licensed under the [MIT License](https://opensource.org/licenses/MIT), see [LICENSE](LICENSE) for futher details.
 
 ## Code of Conduct
 
-Everyone interacting in the Rggen::Spreadsheet::Loader project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/rggen-spreadsheet-loader/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the RgGen project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/rggen/rggen-spreadsheet-loader/blob/master/CODE_OF_CONDUCT.md).
