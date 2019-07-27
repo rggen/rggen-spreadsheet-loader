@@ -1,7 +1,9 @@
+[![Gem Version](https://badge.fury.io/rb/rggen-spreadsheet-loader.svg)](https://badge.fury.io/rb/rggen-spreadsheet-loader)
 [![Build Status](https://travis-ci.org/rggen/rggen-spreadsheet-loader.svg?branch=master)](https://travis-ci.org/rggen/rggen-spreadsheet-loader)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7a4090f4a7c21d29036c/maintainability)](https://codeclimate.com/github/rggen/rggen-spreadsheet-loader/maintainability)
 [![codecov](https://codecov.io/gh/rggen/rggen-spreadsheet-loader/branch/master/graph/badge.svg)](https://codecov.io/gh/rggen/rggen-spreadsheet-loader)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=rggen_rggen-spreadsheet-loader&metric=alert_status)](https://sonarcloud.io/dashboard?id=rggen_rggen-spreadsheet-loader)
+[![Gitter](https://badges.gitter.im/rggen/rggen.svg)](https://gitter.im/rggen/rggen?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 # RgGen::SpreadsheetLoader
 
@@ -32,6 +34,7 @@ $ gem install rggen-spreadsheet-loader
 Feedbacks, bug reports, questions and etc. are wellcome! You can post them by using following ways:
 
 * [GitHub Issue Tracker](https://github.com/rggen/rggen-spreadsheet-loader/issues)
+* [Chat Room](https://gitter.im/rggen/rggen)
 * [Mail](mailto:taichi730@gmail.com)
 
 ## Copyright & License
