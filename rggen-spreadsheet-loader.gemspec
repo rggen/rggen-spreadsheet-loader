@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.name = 'rggen-spreadsheet-loader'
   spec.version = RgGen::SpreadsheetLoader::VERSION
   spec.authors = ['Taichi Ishitani']
-  spec.email = ['taichi730@gmail.com']
+  spec.email = ['rggen@googlegroups.com']
 
   spec.summary = "rggen-spreadsheet-loader-#{RgGen::SpreadsheetLoader::VERSION}"
   spec.description = 'Spreadsheet loader for RgGen register map.'
@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata = {
     'bug_tracker_uri' => 'https://github.com/rggen/rggen-spreadsheet-loader/issues',
+    'mailing_list_uri' => 'https://groups.google.com/forum/#!forum/rggen',
     'source_code_uri' => 'https://github.com/rggen/rggen-spreadsheet-loader',
     'wiki_uri' => 'https://github.com/rggen/rggen/wiki'
   }
