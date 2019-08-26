@@ -4,17 +4,12 @@ require 'spec_helper'
 
 module RgGen
   describe SpreadsheetLoader do
-    describe '.setup' do
-      let(:builder) do
-        builder = RgGen::Core::Builder::Builder.new
-        builder.register_input_components
-        builder
-      end
+    describe '既定セットアップ' do
+      let(:builder) { RgGen.builder }
 
       it 'builderにRooLoaderを登録する' do
-        allow(builder).to receive(:register_loader).and_call_original
-        SpreadsheetLoader.setup(builder)
-        expect(builder).to have_received(:register_loader).with(:register_map, equal(RgGen::SpreadsheetLoader::RooLoader))
+        expect(builder).to receive(:register_loader).with(:register_map, equal(RgGen::SpreadsheetLoader::RooLoader))
+        require 'rggen/spreadsheet_loader/setup'
       end
     end
   end

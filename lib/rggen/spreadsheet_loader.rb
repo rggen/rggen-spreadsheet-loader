@@ -13,10 +13,8 @@ require_relative 'spreadsheet_loader/roo_loader'
 
 module RgGen
   module SpreadsheetLoader
-    def self.setup(builder)
+    def self.default_setup(builder)
       builder.register_loader(:register_map, RooLoader)
     end
   end
-
-  setup :'spreadsheet-loader', SpreadsheetLoader
 end
