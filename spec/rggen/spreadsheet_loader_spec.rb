@@ -10,6 +10,7 @@ module RgGen
       it 'builderにRooLoaderを登録する' do
         expect(builder).to receive(:register_loader).with(:register_map, equal(RgGen::SpreadsheetLoader::RooLoader))
         require 'rggen/spreadsheet_loader/setup'
+        builder.activate_plugins
       end
     end
   end
