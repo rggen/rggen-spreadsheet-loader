@@ -18,7 +18,7 @@ module RgGen
       def read_xls(file)
         require 'spreadsheet'
         ::Spreadsheet.open(file, 'rb') do |book|
-          book.worksheets.select { |sheet| sheet.row_count > 0 }
+          book.worksheets.select { |sheet| sheet.row_count.positive? }
         end
       end
     end
