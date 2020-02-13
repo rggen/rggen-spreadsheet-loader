@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'roo'
 require_relative 'spreadsheet_loader/version'
 require_relative 'spreadsheet_loader/spreadsheet/position'
 require_relative 'spreadsheet_loader/spreadsheet/cell'
