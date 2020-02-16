@@ -27,6 +27,11 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.3'
 
+  # The latest 'nokogiri' gem does not support Ruby 2.7 on Windows.
+  # The 'nokogiri' gem v1.11.0 will support this platform
+  # but it has not yet been released.
+  # See: https://github.com/rggen/rggen-spreadsheet-loader/issues/6
+  spec.add_runtime_dependency 'nokogiri', '>= 1.11.0.a'
   spec.add_runtime_dependency 'roo', '>= 2.8'
   spec.add_runtime_dependency 'spreadsheet', '>= 1.2.5'
 
