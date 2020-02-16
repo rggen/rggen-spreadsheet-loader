@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.files = `git ls-files lib LICENSE CODE_OF_CONDUCT.md README.md`.split($RS)
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '>= 2.3'
+  spec.required_ruby_version = '>= 2.4'
 
   # The latest 'nokogiri' gem does not support Ruby 2.7 on Windows.
   # The 'nokogiri' gem v1.11.0 will support this platform
