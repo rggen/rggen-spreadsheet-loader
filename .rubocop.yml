@@ -27,6 +27,15 @@ Style/EmptyMethod:
 Style/FormatStringToken:
   EnforcedStyle: unannotated
 
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: false
+
 Style/RaiseArgs:
   EnforcedStyle: compact
 
