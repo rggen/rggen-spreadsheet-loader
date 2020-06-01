@@ -12,7 +12,7 @@ group :rggen do
     instance_eval(File.read(gemfile_path), gemfile_path, 1)
 
   if ENV['USE_FIXED_GEMS'] == 'yes'
-    ['facets', 'rubyzip'].each do |library|
+    ['facets'].each do |library|
       library_path = File.expand_path("../#{library}", __dir__)
       if Dir.exist?(library_path) && !ENV['USE_GITHUB_REPOSITORY']
         gem library, path: library_path
@@ -22,6 +22,7 @@ group :rggen do
     end
 
     gem 'ruby-ole', '>= 1.2.12.2'
+    gem 'rubyzip', '>= 2.3.0'
     gem 'spreadsheet', '>= 1.2.1'
   end
 end
