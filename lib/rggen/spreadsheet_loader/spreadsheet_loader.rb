@@ -24,7 +24,7 @@ module RgGen
       end
 
       def parse_register_block(sheet)
-        register_map.register_block do
+        root.register_block do
           register_block_valid_values
             .zip(register_block_cells(sheet))
             .each { |value_name, cell| value(value_name, cell) }
@@ -96,15 +96,15 @@ module RgGen
       end
 
       def register_block_valid_values
-        valid_value_lists[1]
+        valid_value_lists[:register_block]
       end
 
       def register_valid_values
-        valid_value_lists[2]
+        valid_value_lists[:register]
       end
 
       def bit_field_valid_values
-        valid_value_lists[3]
+        valid_value_lists[:bit_field]
       end
     end
   end

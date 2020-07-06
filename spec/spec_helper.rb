@@ -3,6 +3,7 @@
 require 'bundler/setup'
 require 'rggen/devtools/spec_helper'
 require 'support/custom_matchers'
+require 'support/shared_contexts'
 
 require 'rggen/core'
 
