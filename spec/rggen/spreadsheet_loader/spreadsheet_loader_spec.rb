@@ -4,19 +4,18 @@ RSpec.describe RgGen::SpreadsheetLoader::SpreadsheetLoader do
   include_context 'loader common'
 
   let(:loader) do
-    Class.new(RgGen::Core::RegisterMap::Loader) do
-      class << self
-        attr_accessor :tables
-      end
-
+    klass = Class.new(RgGen::Core::RegisterMap::Loader) do
       include RgGen::SpreadsheetLoader::SpreadsheetLoader
 
+      attr_accessor :tables
+
       def read_spreadsheet(_file, book)
-        self.class.tables.each do |sheet, table|
+        tables.each do |sheet, table|
           book.add_sheet(sheet, table)
         end
       end
     end
+    klass.new([], {})
   end
 
   describe '入力ファイルの読み込み' do

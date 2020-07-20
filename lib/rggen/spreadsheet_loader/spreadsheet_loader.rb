@@ -9,72 +9,65 @@ module RgGen
         Spreadsheet::Book.new(file) { |book| read_spreadsheet(file, book) }
       end
 
-      def format(book, _file)
-        book.sheets.each(&method(:process_sheet))
-      end
-
       private
 
-      def process_sheet(sheet)
-        register_block = parse_register_block(sheet)
-        sheet
-          .rows(register_start_position.row)
-          .reject { |row| row.cells.all?(&:empty_cell?) }
-          .each { |row| process_row(row, register_block) }
+      def format_layer_data(read_data, layer, _file)
+        layer != :root ? collect_layer_data(read_data, layer) : nil
       end
 
-      def parse_register_block(sheet)
-        root.register_block do
-          register_block_valid_values
-            .zip(register_block_cells(sheet))
-            .each { |value_name, cell| value(value_name, cell) }
-        end
+      def collect_layer_data(read_data, layer)
+        values = valid_values(layer)
+        cells = __send__("#{layer}_cells", read_data)
+        values.zip(cells).to_h
       end
 
       def register_block_cells(sheet)
         start_row = register_block_start_position.row
         start_column = register_block_start_position.column
-        Array.new(register_block_valid_values.size) do |i|
+        Array.new(valid_values(:register_block).size) do |i|
           sheet[start_row + i, start_column]
         end
       end
 
-      def process_row(row, register_block)
-        register =
-          if row[register_start_position.column].empty_cell?
-            register_block.children.last
-          else
-            parse_register(row, register_block)
-          end
-        parse_bit_field(row, register)
-      end
-
-      def parse_register(row, register_block)
-        register_block.register do
-          register_valid_values
-            .zip(register_cells(row))
-            .each { |value_name, cell| value(value_name, cell) }
-        end
-      end
-
-      def register_cells(row)
+      def register_cells(rows)
         start_column = register_start_position.column
-        size = register_valid_values.size
-        row.cells(start_column, size)
-      end
-
-      def parse_bit_field(row, register)
-        register.bit_field do
-          bit_field_valid_values
-            .zip(bit_field_cells(row))
-            .each { |value_name, cell| value(value_name, cell) }
-        end
+        size = valid_values(:register).size
+        rows.first.cells(start_column, size)
       end
 
       def bit_field_cells(row)
         start_column = bit_field_start_position.column
-        size = bit_field_valid_values.size
+        size = valid_values(:bit_field).size
         row.cells(start_column, size)
+      end
+
+      SUB_LAYERS = {
+        root: :register_block,
+        register_block: :register,
+        register: :bit_field
+      }.freeze
+
+      def format_sub_layer_data(read_data, layer, _file)
+        sub_layer = SUB_LAYERS[layer]
+        sub_layer && { sub_layer => __send__("collect_#{sub_layer}_data", read_data) }
+      end
+
+      def collect_register_block_data(book)
+        book.sheets
+      end
+
+      def collect_register_data(sheet)
+        sheet.rows(register_start_position.row)
+          .reject { |row| row.cells.all?(&:empty_cell?) }
+          .each_with_object([]) do |row, row_sets|
+            row[register_start_position.column].empty_cell? ||
+              (row_sets << [])
+            row_sets.last << row
+          end
+      end
+
+      def collect_bit_field_data(rows)
+        rows
       end
 
       def register_block_start_position
@@ -83,28 +76,16 @@ module RgGen
 
       def register_start_position
         @register_start_position ||=
-          Position.new(register_block_valid_values.size + 2, 1)
+          Position.new(valid_values(:register_block).size + 2, 1)
       end
 
       def bit_field_start_position
         @bit_field_start_position ||=
           begin
             column =
-              register_start_position.column + register_valid_values.size
+              register_start_position.column + valid_values(:register).size
             Position.new(0, column)
           end
-      end
-
-      def register_block_valid_values
-        valid_value_lists[:register_block]
-      end
-
-      def register_valid_values
-        valid_value_lists[:register]
-      end
-
-      def bit_field_valid_values
-        valid_value_lists[:bit_field]
       end
     end
   end
