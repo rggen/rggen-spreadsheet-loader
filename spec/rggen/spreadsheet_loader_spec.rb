@@ -17,6 +17,8 @@ RSpec.describe RgGen::SpreadsheetLoader do
       expect(builder).to receive(:register_loader).with(:register_map, :spreadsheet, equal(RgGen::SpreadsheetLoader::CSVLoader)).and_call_original
       expect(builder).to receive(:register_loader).with(:register_map, :spreadsheet, equal(RgGen::SpreadsheetLoader::RooLoader)).and_call_original
       expect(builder).to receive(:register_loader).with(:register_map, :spreadsheet, equal(RgGen::SpreadsheetLoader::XLSLoader)).and_call_original
+      expect(builder).to receive(:ignore_value).with(:register_map, :spreadsheet, :register_block, :comment).and_call_original
+      expect(builder).to receive(:ignore_value).with(:register_map, :spreadsheet, :register, :comment).and_call_original
       require 'rggen/spreadsheet_loader/setup'
       builder.activate_plugins
     end
