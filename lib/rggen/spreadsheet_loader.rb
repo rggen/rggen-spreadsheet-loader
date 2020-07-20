@@ -14,9 +14,9 @@ require_relative 'spreadsheet_loader/xls_loader'
 module RgGen
   module SpreadsheetLoader
     def self.default_setup(builder)
-      builder.register_loader(:register_map, CSVLoader)
-      builder.register_loader(:register_map, RooLoader)
-      builder.register_loader(:register_map, XLSLoader)
+      builder.register_loader(:register_map, :spreadsheet, CSVLoader)
+      builder.register_loader(:register_map, :spreadsheet, RooLoader)
+      builder.register_loader(:register_map, :spreadsheet, XLSLoader)
     end
   end
 end

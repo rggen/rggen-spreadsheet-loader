@@ -3,7 +3,7 @@
 RSpec.describe RgGen::SpreadsheetLoader::XLSLoader do
   include_context 'loader common'
 
-  let(:loader) { RgGen::SpreadsheetLoader::XLSLoader }
+  let(:loader) { described_class.new([], {}) }
 
   it 'xls形式に対応する' do
     expect(loader.support?('foo.xls')).to be true

@@ -3,7 +3,7 @@
 RSpec.describe RgGen::SpreadsheetLoader::CSVLoader do
   include_context 'loader common'
 
-  let(:loader) { RgGen::SpreadsheetLoader::CSVLoader }
+  let(:loader) { described_class.new([], {}) }
 
   it 'csv形式に対応する' do
     expect(loader.support?('foo.csv')).to be true
