@@ -13,6 +13,8 @@ require_relative 'spreadsheet_loader/xls_loader'
 
 module RgGen
   module SpreadsheetLoader
+    PLUGIN_NAME = :'rggen-spreadsheet-loader'
+
     def self.default_setup(builder)
       builder.register_loader(:register_map, :spreadsheet, CSVLoader)
       builder.register_loader(:register_map, :spreadsheet, RooLoader)
