@@ -68,7 +68,7 @@ module RgGen
       end
 
       def register_begin?(row)
-        !row[register_block_start_position.column].empty_cell?
+        !row[register_start_position.column].empty_cell?
       end
 
       def collect_bit_field_data(rows)
