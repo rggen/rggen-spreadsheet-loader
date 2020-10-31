@@ -1,6 +1,6 @@
-	register_block_foo	register_block_foo_0
-	register_block_bar	register_block_bar_0
-
+	register_block_foo	register_block_foo_0		
+	register_block_bar	register_block_bar_0		
+				
 	register_foo	register_bar	bit_field_foo	bit_field_bar
 	register_foo_0_0	register_bar_0_0	bit_field_foo_0_0_0	bit_field_bar_0_0_0
 			bit_field_foo_0_0_1	bit_field_bar_0_0_1
