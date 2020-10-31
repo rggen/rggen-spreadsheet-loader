@@ -5,7 +5,7 @@ module RgGen
     class CSVLoader < Core::RegisterMap::Loader
       include SpreadsheetLoader
 
-      support_types [:csv]
+      support_types [:csv, :tsv]
 
       def read_spreadsheet(file, book)
         sheet = read_csv(file)
@@ -17,7 +17,12 @@ module RgGen
 
       def read_csv(file)
         require 'csv'
-        CSV.read(file)
+        CSV.read(file, col_sep: separator(file))
+      end
+
+      def separator(file)
+        ext = File.extname(file)
+        ext.casecmp?('.tsv') && "\t" || ','
       end
     end
   end
