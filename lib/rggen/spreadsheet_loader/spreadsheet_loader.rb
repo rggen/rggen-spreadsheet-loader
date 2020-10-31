@@ -59,11 +59,16 @@ module RgGen
       def collect_register_data(sheet)
         sheet.rows(register_start_position.row)
           .reject { |row| row.cells.all?(&:empty_cell?) }
-          .each_with_object([]) do |row, row_sets|
-            row[register_start_position.column].empty_cell? ||
-              (row_sets << [])
-            row_sets.last << row
-          end
+          .each_with_object([], &method(:collect_register_rows))
+      end
+
+      def collect_register_rows(row, row_sets)
+        register_begin?(row) && (row_sets << [])
+        row_sets.last << row
+      end
+
+      def register_begin?(row)
+        !row[register_block_start_position.column].empty_cell?
       end
 
       def collect_bit_field_data(rows)
@@ -81,11 +86,11 @@ module RgGen
 
       def bit_field_start_position
         @bit_field_start_position ||=
-          begin
-            column =
-              register_start_position.column + valid_values(:register).size
-            Position.new(0, column)
-          end
+          Position.new(0, bit_field_start_column)
+      end
+
+      def bit_field_start_column
+        register_start_position.column + valid_values(:register).size
       end
     end
   end
