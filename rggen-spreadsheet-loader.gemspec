@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('lib', __dir__)
-$LOAD_PATH.include?(lib) || $LOAD_PATH.unshift(lib)
-require 'rggen/spreadsheet_loader/version'
+require File.expand_path('lib/rggen/spreadsheet_loader/version', __dir__)
 
 Gem::Specification.new do |spec|
   spec.name = 'rggen-spreadsheet-loader'
