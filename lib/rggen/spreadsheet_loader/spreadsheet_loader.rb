@@ -12,7 +12,8 @@ module RgGen
       private
 
       def format_layer_data(read_data, layer, _file)
-        layer != :root ? collect_layer_data(read_data, layer) : nil
+        return if layer == :root
+        collect_layer_data(read_data, layer)
       end
 
       def collect_layer_data(read_data, layer)
