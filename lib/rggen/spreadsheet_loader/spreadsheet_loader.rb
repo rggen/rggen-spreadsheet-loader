@@ -58,7 +58,8 @@ module RgGen
       end
 
       def collect_register_data(sheet)
-        sheet.rows(register_start_position.row)
+        sheet
+          .rows(register_start_position.row)
           .reject { |row| row.cells.all?(&:empty_cell?) }
           .each_with_object([], &method(:collect_register_rows))
       end
