@@ -20,7 +20,7 @@ module RgGen
 
         def from_table(table)
           table.each_with_index do |row, row_index|
-            row.each_with_index do |value, column_index|
+            row&.each_with_index do |value, column_index|
               self[row_index][column_index] = value
             end
           end
