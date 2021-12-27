@@ -8,6 +8,7 @@ require_relative 'spreadsheet_loader/spreadsheet/sheet'
 require_relative 'spreadsheet_loader/spreadsheet/book'
 require_relative 'spreadsheet_loader/spreadsheet_loader'
 require_relative 'spreadsheet_loader/csv_loader'
+require_relative 'spreadsheet_loader/ods_loader'
 require_relative 'spreadsheet_loader/roo_loader'
 require_relative 'spreadsheet_loader/xls_loader'
 
@@ -17,6 +18,7 @@ module RgGen
 
     setup_plugin :'rggen-spreadsheet-loader' do |plugin|
       plugin.register_loader :register_map, :spreadsheet, CSVLoader
+      plugin.register_loader :register_map, :spreadsheet, ODSLoader
       plugin.register_loader :register_map, :spreadsheet, RooLoader
       plugin.register_loader :register_map, :spreadsheet, XLSLoader
     end

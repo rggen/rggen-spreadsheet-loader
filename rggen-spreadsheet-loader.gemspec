@@ -27,6 +27,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'roo', '>= 2.8'
   spec.add_runtime_dependency 'spreadsheet', '>= 1.2.5'
+  spec.add_runtime_dependency 'spreadbase', '>= 0.3.0'
 
   spec.add_development_dependency 'bundler'
 end
