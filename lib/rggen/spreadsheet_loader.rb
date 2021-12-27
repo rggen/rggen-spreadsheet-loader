@@ -11,16 +11,16 @@ require_relative 'spreadsheet_loader/csv_loader'
 require_relative 'spreadsheet_loader/ods_loader'
 require_relative 'spreadsheet_loader/roo_loader'
 require_relative 'spreadsheet_loader/xls_loader'
+require_relative 'spreadsheet_loader/xlsx_loader'
 
 module RgGen
   module SpreadsheetLoader
     extend Core::Plugin
 
     setup_plugin :'rggen-spreadsheet-loader' do |plugin|
-      plugin.register_loader :register_map, :spreadsheet, CSVLoader
-      plugin.register_loader :register_map, :spreadsheet, ODSLoader
-      plugin.register_loader :register_map, :spreadsheet, RooLoader
-      plugin.register_loader :register_map, :spreadsheet, XLSLoader
+      [CSVLoader, ODSLoader, RooLoader, XLSLoader, XLSXLoader].each do |loader|
+        plugin.register_loader :register_map, :spreadsheet, loader
+      end
     end
   end
 end
