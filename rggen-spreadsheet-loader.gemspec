@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
   spec.metadata = {
     'bug_tracker_uri' => 'https://github.com/rggen/rggen-spreadsheet-loader/issues',
     'mailing_list_uri' => 'https://groups.google.com/d/forum/rggen',
+    'rubygems_mfa_required' => 'true',
     'source_code_uri' => 'https://github.com/rggen/rggen-spreadsheet-loader',
     'wiki_uri' => 'https://github.com/rggen/rggen/wiki'
   }
@@ -23,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.files = `git ls-files lib LICENSE CODE_OF_CONDUCT.md README.md`.split($RS)
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '>= 2.5'
+  spec.required_ruby_version = '>= 2.6'
 
   spec.add_runtime_dependency 'simple_xlsx_reader', '>= 1.0.4'
   spec.add_runtime_dependency 'spreadbase', '>= 0.3.0'
