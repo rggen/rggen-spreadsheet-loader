@@ -50,7 +50,8 @@ module RgGen
 
       def format_sub_layer_data(read_data, layer, _file)
         sub_layer = SUB_LAYERS[layer]
-        sub_layer && { sub_layer => __send__("collect_#{sub_layer}_data", read_data) }
+        sub_layer &&
+          [sub_layer].product(__send__("collect_#{sub_layer}_data", read_data))
       end
 
       def collect_register_block_data(book)
