@@ -12,14 +12,17 @@ require_relative 'spreadsheet_loader/ods_loader'
 require_relative 'spreadsheet_loader/xls_loader'
 require_relative 'spreadsheet_loader/xlsx_loader'
 
-module RgGen
-  module SpreadsheetLoader
-    extend Core::Plugin
+RgGen.setup_plugin :'rggen-spreadsheet-loader' do |plugin|
+  plugin.version RgGen::SpreadsheetLoader::VERSION
+  plugin.setup_loader :register_map, :spreadsheet do |entry|
+    entry.register_loaders [
+      RgGen::SpreadsheetLoader::CSVLoader,
+      RgGen::SpreadsheetLoader::ODSLoader,
+      RgGen::SpreadsheetLoader::XLSLoader,
+      RgGen::SpreadsheetLoader::XLSXLoader
+    ]
 
-    setup_plugin :'rggen-spreadsheet-loader' do |plugin|
-      [CSVLoader, ODSLoader, XLSLoader, XLSXLoader].each do |loader|
-        plugin.register_loader :register_map, :spreadsheet, loader
-      end
-    end
+    entry.ignore_value :register_block, :comment
+    entry.ignore_value :register, :comment
   end
 end
