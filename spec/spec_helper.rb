@@ -15,3 +15,4 @@ RSpec.configure do |config|
 end
 
 require 'rggen/spreadsheet_loader'
+builder.plugin_manager.activate_plugin_by_name(:'rggen-spreadsheet-loader')
