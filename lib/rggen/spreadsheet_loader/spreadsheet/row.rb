@@ -16,12 +16,12 @@ module RgGen
         attr_reader :row
 
         def [](column)
-          @cells[column] ||= Cell.new(self, column)
+          @cells[column] ||= EmptyCell.new(self, column)
           @cells[column]
         end
 
         def []=(column, value)
-          self[column].value = value
+          @cells[column] = Cell.new(value, self, column)
         end
 
         def cells(from = 0, length = nil)
