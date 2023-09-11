@@ -12,7 +12,7 @@ RSpec.shared_context 'loader common' do
   end
 
   let(:input_data) do
-    RgGen::Core::RegisterMap::InputData.new(:root, valid_value_lists)
+    RgGen::Core::RegisterMap::InputData.new(:root, valid_value_lists, nil)
   end
 
   let(:register_blocks) do
