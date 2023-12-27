@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        ruby: ['3.2', '3.1', '3.0']
+        ruby: ['3.3', '3.2', '3.1', '3.0']
         frozen_string_literal: ['yes', 'no']
 
     env:
@@ -43,6 +43,14 @@ jobs:
       - name: Checkout RgGen libraries
         run: |
           ${RGGEN_ROOT}/rggen-devtools/bin/checkout.rb
+
+      - name: Checkout stdgems-version gem
+        uses: actions/checkout@v4
+        with:
+          repository: taichi-ishitani/stdgems-version
+          path: stdgems-version
+          fetch-depth: 0
+          submodules: true
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
