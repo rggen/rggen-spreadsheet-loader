@@ -15,13 +15,6 @@ group :rggen do
 end
 
 if ENV.key?('CI')
-  if ENV['GITHUB_WORKFLOW'] == 'CI'
-    require File.join(root, 'stdgems-version/lib/stdgems_version')
-    gem 'bigdecimal', StdgemsVersion.version('bigdecimal')
-    gem 'csv', StdgemsVersion.version('csv')
-  else
-    # Workaround for 64kramsystem/spreadbase#30
-    # https://github.com/64kramsystem/spreadbase/issues/30
-    gem 'bigdecimal'
-  end
+  require File.join(root, 'stdgems-version/lib/stdgems_version')
+  gem 'csv', StdgemsVersion.version('csv')
 end
