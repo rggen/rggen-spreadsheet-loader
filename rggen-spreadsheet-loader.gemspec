@@ -28,6 +28,6 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'csv'
   spec.add_runtime_dependency 'simple_xlsx_reader', '>= 1.0.4'
-  spec.add_runtime_dependency 'spreadbase', '>= 0.4.0'
+  spec.add_runtime_dependency 'spreadbase', '>= 0.5.0'
   spec.add_runtime_dependency 'spreadsheet', '>= 1.2.5'
 end
