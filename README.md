@@ -10,7 +10,7 @@ RgGen::SpreadsheetLoader adds ability to load register map documents written in 
 
 Supported spreadsheet formats are listed below:
 
-* MS Excel (xlsx and xls)
+* MS Excel (xlsx)
 * LibreOffice/OpenOffice (ods)
 * CSV
 
