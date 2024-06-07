@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+autoload :CSV, 'csv'
+autoload :SimpleXlsxReader, 'simple_xlsx_reader'
+autoload :SpreadBase, 'spreadbase'
+
 require_relative 'spreadsheet_loader/version'
 require_relative 'spreadsheet_loader/spreadsheet/position'
 require_relative 'spreadsheet_loader/spreadsheet/cell'

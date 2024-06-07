@@ -8,7 +8,6 @@ module RgGen
       support_types [:xlsx]
 
       def read_spreadsheet(file, book)
-        require 'simple_xlsx_reader'
         SimpleXlsxReader.open(file)
           .sheets.each { |sheet| process_sheet(sheet, book) }
       end

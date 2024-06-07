@@ -16,7 +16,6 @@ module RgGen
       private
 
       def read_csv(file)
-        require 'csv'
         CSV.read(file, col_sep: separator(file))
       end
 
