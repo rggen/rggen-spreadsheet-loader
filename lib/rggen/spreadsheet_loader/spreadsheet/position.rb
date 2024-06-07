@@ -3,11 +3,27 @@
 module RgGen
   module SpreadsheetLoader
     module Spreadsheet
-      Position = Struct.new(:file, :sheet, :row, :column) do
+      class Position
+        def initialize(file, sheet, row, column)
+          @file = file
+          @sheet = sheet
+          @row = row
+          @column = column
+        end
+
+        attr_reader :file
+        attr_reader :sheet
+
+        def row
+          @row + 1
+        end
+
+        def column
+          @column.times.inject('A') { |l, _| l.next }
+        end
+
         def to_s
-          to_h
-            .map { |field, value| "#{field}: #{value}" }
-            .join(' ')
+          "file: #{file} sheet: #{sheet} row: #{row} column: #{column}"
         end
       end
     end

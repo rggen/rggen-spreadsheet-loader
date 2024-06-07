@@ -2,6 +2,7 @@
 
 require 'bundler/setup'
 require 'rggen/devtools/spec_helper'
+require 'support/helper_methods'
 require 'support/custom_matchers'
 require 'support/shared_contexts'
 
@@ -11,6 +12,7 @@ builder = RgGen::Core::Builder.create
 RgGen.builder(builder)
 
 RSpec.configure do |config|
+  config.include RgGen::SpreadsheetLoader::HelperMethods
   RgGen::Devtools::SpecHelper.setup(config)
 end
 
