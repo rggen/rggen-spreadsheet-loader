@@ -8,7 +8,6 @@ module RgGen
       support_types [:ods]
 
       def read_spreadsheet(file, book)
-        require 'spreadbase'
         SpreadBase::Document.new(file)
           .tables.each { |table| process_table(table, book) }
       end
