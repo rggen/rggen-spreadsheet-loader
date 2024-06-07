@@ -29,11 +29,10 @@ RSpec.describe RgGen::SpreadsheetLoader::Spreadsheet::Book do
     end
 
     def match_cell(value, sheet, row, column)
-      position = RgGen::SpreadsheetLoader::Spreadsheet::Position.new(file, sheet, row, column)
       if value.nil?
-        be_empty_cell(position)
+        be_empty_cell(match_cell_position(file, sheet, row, column))
       else
-        match_value(value, position)
+        match_value(value, match_cell_position(file, sheet, row, column))
       end
     end
 

@@ -28,7 +28,7 @@ RSpec.describe RgGen::SpreadsheetLoader::Spreadsheet::Sheet do
   end
 
   def cell_position(row, column)
-    RgGen::SpreadsheetLoader::Spreadsheet::Position.new(file, sheet_name, row, column)
+    match_cell_position(file, sheet_name, row, column)
   end
 
   describe '#from_table' do

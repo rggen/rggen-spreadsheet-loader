@@ -3,7 +3,7 @@
 RSpec::Matchers.define(:be_empty_cell) do |position = nil|
   match do |actual|
     return false unless actual.empty_cell?
-    return false if position && (actual.position != position)
+    return false unless match_position?(position, actual.position)
     true
   end
 
@@ -15,5 +15,13 @@ RSpec::Matchers.define(:be_empty_cell) do |position = nil|
     else
       'expected cell to be empty but not'
     end
+  end
+
+  private
+
+  def match_position?(expected_position, actual_position)
+    return true unless expected_position
+
+    values_match?(expected_position, actual_position)
   end
 end

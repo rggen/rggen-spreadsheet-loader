@@ -14,7 +14,7 @@ RSpec.describe RgGen::SpreadsheetLoader::Spreadsheet::Row do
   let(:row_index) { (0..10).to_a.sample }
 
   def cell_position(column_index)
-    RgGen::SpreadsheetLoader::Spreadsheet::Position.new(file, sheet_name, row_index, column_index)
+    match_cell_position(file, sheet_name, row_index, column_index)
   end
 
   describe '#[]=' do
