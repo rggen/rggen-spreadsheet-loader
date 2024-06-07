@@ -14,7 +14,6 @@ group :rggen do
   gem_patched 'rubyzip'
 end
 
-if ENV.key?('CI')
-  require File.join(root, 'stdgems-version/lib/stdgems_version')
-  gem 'csv', StdgemsVersion.version('csv')
+for_ci do
+  gem_bundled 'csv'
 end
