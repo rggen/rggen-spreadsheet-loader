@@ -2,6 +2,6 @@
 
 module RgGen
   module SpreadsheetLoader
-    VERSION = '0.25.2'
+    VERSION = '0.25.3'
   end
 end
