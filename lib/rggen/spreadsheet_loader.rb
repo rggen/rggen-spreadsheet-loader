@@ -23,8 +23,5 @@ RgGen.setup_plugin :'rggen-spreadsheet-loader' do |plugin|
       RgGen::SpreadsheetLoader::ODSLoader,
       RgGen::SpreadsheetLoader::XLSXLoader
     ]
-
-    entry.ignore_value :register_block, :comment
-    entry.ignore_value :register, :comment
   end
 end
