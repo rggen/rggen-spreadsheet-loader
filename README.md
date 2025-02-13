@@ -1,6 +1,6 @@
 [![Gem Version](https://badge.fury.io/rb/rggen-spreadsheet-loader.svg)](https://badge.fury.io/rb/rggen-spreadsheet-loader)
 [![CI](https://github.com/rggen/rggen-spreadsheet-loader/workflows/CI/badge.svg)](https://github.com/rggen/rggen-spreadsheet-loader/actions?query=workflow%3ACI)
-[![Maintainability](https://api.codeclimate.com/v1/badges/7a4090f4a7c21d29036c/maintainability)](https://codeclimate.com/github/rggen/rggen-spreadsheet-loader/maintainability)
+[![Maintainability](https://qlty.sh/badges/e8080d4e-6df4-473a-9594-5e9cd99e048f/maintainability.svg)](https://qlty.sh/gh/rggen/projects/rggen-spreadsheet-loader)
 [![codecov](https://codecov.io/gh/rggen/rggen-spreadsheet-loader/branch/master/graph/badge.svg)](https://codecov.io/gh/rggen/rggen-spreadsheet-loader)
 [![Gitter](https://badges.gitter.im/rggen/rggen.svg)](https://gitter.im/rggen/rggen?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
