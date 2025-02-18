@@ -52,7 +52,7 @@ RSpec.describe RgGen::SpreadsheetLoader::SpreadsheetLoader do
 
     it '読み込んだスプレッドシートから入力データを組み立てる' do
       loader.tables = { 'sheet_0' => table_data_0, 'sheet_1' => table_data_1 }
-      loader.load_file(file, input_data, valid_value_lists)
+      loader.load_data(input_data, valid_value_lists, file)
       match_with_sheet_0(file, 'sheet_0')
       match_with_sheet_1(file, 'sheet_1')
     end

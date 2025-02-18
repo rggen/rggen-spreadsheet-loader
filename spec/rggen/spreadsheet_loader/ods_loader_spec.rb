@@ -17,7 +17,7 @@ RSpec.describe RgGen::SpreadsheetLoader::ODSLoader do
 
   it 'ods形式のスプレッドシートをロードできる' do
     file = File.expand_path('../../files/test.ods', __dir__)
-    loader.load_file(file, input_data, valid_value_lists)
+    loader.load_data(input_data, valid_value_lists, file)
     match_with_sheet_0(file, 'sheet_0')
     match_with_sheet_1(file, 'sheet_1')
   end

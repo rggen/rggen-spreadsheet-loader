@@ -17,7 +17,7 @@ RSpec.describe RgGen::SpreadsheetLoader::CSVLoader do
 
   it 'csv形式のスプレッドシートをロードできる' do
     file = File.expand_path('../../files/test.csv', __dir__)
-    loader.load_file(file, input_data, valid_value_lists)
+    loader.load_data(input_data, valid_value_lists, file)
     match_with_sheet_0(file, 'test')
   end
 
@@ -33,7 +33,7 @@ RSpec.describe RgGen::SpreadsheetLoader::CSVLoader do
 
   it 'tsv形式のスプレッドシートをロードできる' do
     file = File.expand_path('../../files/test.tsv', __dir__)
-    loader.load_file(file, input_data, valid_value_lists)
+    loader.load_data(input_data, valid_value_lists, file)
     match_with_sheet_0(file, 'test')
   end
 end
