@@ -15,7 +15,7 @@ module RgGen
       private
 
       def process_sheet(sheet, book)
-        sheet.rows.count.positive? &&
+        sheet.rows.any? &&
           book.add_sheet(sheet.name, sheet.rows)
       end
     end
