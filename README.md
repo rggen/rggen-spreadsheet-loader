@@ -2,7 +2,7 @@
 [![CI](https://github.com/rggen/rggen-spreadsheet-loader/workflows/CI/badge.svg)](https://github.com/rggen/rggen-spreadsheet-loader/actions?query=workflow%3ACI)
 [![Maintainability](https://qlty.sh/badges/e8080d4e-6df4-473a-9594-5e9cd99e048f/maintainability.svg)](https://qlty.sh/gh/rggen/projects/rggen-spreadsheet-loader)
 [![codecov](https://codecov.io/gh/rggen/rggen-spreadsheet-loader/branch/master/graph/badge.svg)](https://codecov.io/gh/rggen/rggen-spreadsheet-loader)
-[![Gitter](https://badges.gitter.im/rggen/rggen.svg)](https://gitter.im/rggen/rggen?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Discord](https://img.shields.io/discord/1406572699467124806?style=flat&logo=discord)](https://discord.com/invite/KWya83ZZxr)
 
 # RgGen::SpreadsheetLoader
 
@@ -34,7 +34,7 @@ Feedbacks, bug reports, questions and etc. are wellcome! You can post them by us
 
 * [GitHub Issue Tracker](https://github.com/rggen/rggen/issues)
 * [GitHub Discussions](https://github.com/rggen/rggen/discussions)
-* [Chat Room](https://gitter.im/rggen/rggen)
+* [Discord](https://discord.com/invite/KWya83ZZxr)
 * [Mailing List](https://groups.google.com/d/forum/rggen)
 * [Mail](mailto:rggen@googlegroups.com)
 
