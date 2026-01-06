@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.files = `git ls-files lib LICENSE CODE_OF_CONDUCT.md README.md`.split($RS)
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = Gem::Requirement.new('>= 3.1')
+  spec.required_ruby_version = Gem::Requirement.new('>= 3.2')
 
   spec.add_dependency 'csv'
   spec.add_dependency 'simple_xlsx_reader', '>= 1.0.4'
