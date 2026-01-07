@@ -40,7 +40,7 @@ Feedbacks, bug reports, questions and etc. are wellcome! You can post them by us
 
 ## Copyright & License
 
-Copyright &copy; 2019-2025 Taichi Ishitani. RgGen::SpreadsheetLoader is licensed under the [MIT License](https://opensource.org/licenses/MIT), see [LICENSE](LICENSE) for futher details.
+Copyright &copy; 2019-2026 Taichi Ishitani. RgGen::SpreadsheetLoader is licensed under the [MIT License](https://opensource.org/licenses/MIT), see [LICENSE](LICENSE) for futher details.
 
 ## Code of Conduct
 
